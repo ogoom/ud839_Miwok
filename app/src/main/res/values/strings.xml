@@ -15,6 +15,10 @@
 <resources>
     <!-- Title for the application. [CHAR LIMIT=12] -->
     <string name="app_name">Miwok</string>
+    <string name="numbers_tab">Numbers</string>
+    <string name="colors_tab">Colors</string>
+    <string name="phrases_tab">Phrases</string>
+    <string name="family_Tab">Family</string>
 
     <!-- Category name for phrases [CHAR LIMIT=20] -->
     <string name="category_phrases">Phrases</string>
