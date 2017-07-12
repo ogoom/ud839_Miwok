@@ -97,6 +97,14 @@ public class NumbersFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
+
         am = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
         final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("one", "lutti", R.drawable.number_one, R.raw.number_one));
@@ -113,7 +121,7 @@ public class NumbersFragment extends Fragment {
 
         WordAdapter itemsAdapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
 
-        ListView listView = (ListView) getView().findViewById(R.id.list);
+        ListView listView = (ListView) rootView.findViewById(R.id.list);
 
         listView.setAdapter(itemsAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -134,12 +142,6 @@ public class NumbersFragment extends Fragment {
                 //Toast.makeText(NumbersFragment.this, "Testing ListView", Toast.LENGTH_SHORT);
             }
         });
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.word_list, container, false);
         return rootView;
     }
 
